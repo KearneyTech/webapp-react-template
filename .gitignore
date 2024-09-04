@@ -1,1 +1,17 @@
 node_modules
+.next/*
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+package-lock.json
+*storybook.log
+/storybook-static/
