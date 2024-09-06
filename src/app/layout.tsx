@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="flex direction-col">
+        <div className="flex flex-col">
           <Link href="/">Home</Link>
           <Link href="/cube">Cube</Link>
           <Link href="/flashCards">Flash Cards</Link>
