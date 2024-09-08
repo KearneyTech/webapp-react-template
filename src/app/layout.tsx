@@ -19,11 +19,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div className="flex flex-col">
-          <Link href="/">Home</Link>
-          <Link href="/cube">Cube</Link>
-          <Link href="/flashCards">Flash Cards</Link>
-          <Link href="/clock">Clock</Link>
-          <Link href="/questions">Questions</Link>
+          <Link href="/" className="underline cursor-pointer">Home</Link>
+          <Link href="/cube" className="underline cursor-pointer">Cube</Link>
+          <Link href="/flashCards" className="underline cursor-pointer">Flash Cards</Link>
+          <Link href="/clock" className="underline cursor-pointer">Clock</Link>
+          <Link href="/questions" className="underline cursor-pointer">Questions</Link>
         </div>
         {children}
       </body>
