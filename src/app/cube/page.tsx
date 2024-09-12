@@ -7,6 +7,8 @@
  * Create tests
  */
 'use client';
+import Tile from "./tile";
+
 const tileColors = [
     'bg-white',
     'bg-[#008000]',
@@ -15,20 +17,15 @@ const tileColors = [
 ];
 
 function tileClick(e: any){
-    console.log('say something');
+    console.log('say something', e);
 }
 
-function Tile({color}: {color: string}) {
-    return (
-        <div onClick={tileClick} className={'border border-slate-600 w-24 h-24 cursor-pointer ' + color}>
-        </div>
-    );
-}
+
 
 export default function Page() {
     let i = 0;
     const tiles = tileColors.map(tileColor =>
-        <Tile key={i++} color={tileColor}/>
+        <Tile key={i++} color={tileColor} tileClick={tileClick}/>
     )
 
     return (
