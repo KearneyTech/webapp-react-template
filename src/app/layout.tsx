@@ -1,3 +1,7 @@
+/**
+ * TODOs
+ * Find site icon.
+ */
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Inter } from "next/font/google";
@@ -15,6 +19,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  console.log(`./layout.tsx`);
+
   return (
     <html lang="en">
       <body className={inter.className}>

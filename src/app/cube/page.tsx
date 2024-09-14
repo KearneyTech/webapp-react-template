@@ -71,13 +71,18 @@ export default function Page() {
             console.log('solved');
             return true;
         } else {
-            console.log(`${tile1Color}, ${tile2Color}, ${tile3Color}, ${tile4Color}`);
+            console.log(`${tile1Color}, ${tile2Color}, ${tile3Color}, ${tile4Color} - evaluateCube`);
             return false;
         }
     }
 
+    function resetCube(){
+        console.log(`resetCube`);
+    }
+
     return (
         <div className="flex flex-col justify-between w-96">
+            <button onClick={resetCube}>reset</button>
             <h2>Cube</h2>
             <div className="flex flex-wrap justify-center w-64 place-self-center">
                 <Tile color={tile1Color} tileClick={handleTopLeftClick}/>
