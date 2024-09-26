@@ -6,6 +6,7 @@ export default function Home() {
             <h1>Home</h1>
             <div>
                 <a href="/cube">Cube</a>
+                <a href="/questions">Questions</a>
             </div>
         </div>
     );
