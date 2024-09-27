@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useReducer} from 'react';
+import { QuestionsProvider } from './QuestionsContext.tsx';
 
 function Questions() {
-
     return (
-        <h1>Questions</h1>
+        <QuestionsProvider>
+            <h1>Questions</h1>
+        </QuestionsProvider>
     );
 }
 
