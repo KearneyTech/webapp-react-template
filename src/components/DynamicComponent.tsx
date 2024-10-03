@@ -2,11 +2,11 @@ import React, { Component, FC } from 'react';
 
 interface DynamicComponentProps {
     component: FC<any>;
-    props?: any;
+    handleSubmit: Function;
 }
 
-const DynamicComponent: FC<DynamicComponentProps> = ({component: Component, props}) => {
-    return <Component {...props} />;
+const DynamicComponent: FC<DynamicComponentProps> = ({component: Component, handleSubmit }) => {
+    return <Component handleSubmit={handleSubmit} />;
 };
 
 export default DynamicComponent;
