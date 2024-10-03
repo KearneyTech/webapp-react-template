@@ -25,7 +25,7 @@ export default function Radio({handleSubmit}) {
             <div>Radio</div>
             <label  className="flex flex-col text-left text-black">
                 What do you want to say?
-                <input type="radio" value={radioValue} onChange={handleChange} className="border-2 border-black bg-transparent w-72" />
+                <input type="radio" value={radioValue} onChange={handleChange} className="border border-black bg-transparent w-72" />
                 <button onClick={handleButton}>Next</button>
             </label>
         </>
