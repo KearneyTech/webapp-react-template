@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from 'react';
+import React, { useState, useReducer } from 'react';
 import { QuestionsProvider } from './QuestionsContext.tsx';
 import DynamicComponent from '../DynamicComponent.tsx';
 import Info from './Info.tsx';
@@ -20,6 +20,14 @@ function Questions() {
         final: Final
     };
 
+    const nextViewMap = new Map();
+    nextViewMap.set('info', 'text');
+    nextViewMap.set('text', 'select');
+    nextViewMap.set('select', 'radio');
+    nextViewMap.set('radio', 'checkbox');
+    nextViewMap.set('checkbox', 'final');
+    nextViewMap.set('final', 'info');
+
     function handleText() {
         setSelectedComponent('text');
     }
@@ -36,10 +44,14 @@ function Questions() {
         setSelectedComponent('checkbox');
     }
 
+    function handleViewSubmit(arg) {
+        setSelectedComponent(nextViewMap.get(arg));
+    }
+
     return (
         <QuestionsProvider>
             <h1>Questions</h1>
-            <DynamicComponent component={components[selectedComponent]} />
+            <DynamicComponent component={components[selectedComponent]} handleSubmit={handleViewSubmit} />
             <div>
                 <button onClick={handleText}>Text</button>
                 <button onClick={handleSelect}>Select</button>

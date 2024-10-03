@@ -1,34 +1,29 @@
-import React, { createContext, useReducer } from "react";
+import React, { createContext, Dispatch, useContext, useReducer } from "react";
 
 interface State {
     text: string;
     radio: string;
     select: string;
+    checkbox: boolean;
 };
 
 interface Action {
-    type: 'text' | 'radio' | 'select',
+    type: 'text' | 'radio' | 'select' | 'checkbox',
     value: string
 };
 
 const initialQuestions:State = {
     text: '',
     radio: '',
-    select: ''
+    select: '',
+    checkbox: false
 };
+
+const QuestionsContext = createContext<State|null>(null);
+const QuestionsDispatchContext = createContext<Dispatch<Action>|null>(null);
 
 export function QuestionsProvider({children}) {
     const [questions, dispatch] = useReducer(questionsReducer, initialQuestions);
-    const QuestionsContext = createContext<State>(initialQuestions);
-    const QuestionsDispatchContext = createContext(dispatch);
-    
-    
-    function handleUpdate(value) {
-        dispatch({
-            type: 'text',
-            value: value
-        })
-    }
     
     return (
         <QuestionsContext.Provider value={questions}>
@@ -37,6 +32,14 @@ export function QuestionsProvider({children}) {
             </QuestionsDispatchContext.Provider>
         </QuestionsContext.Provider>
     )
+}
+
+export function useQuestions() {
+    return useContext(QuestionsContext)
+}
+
+export function useQuestionsDispatch() {
+    return useContext(QuestionsDispatchContext)
 }
 
 function questionsReducer(state: State, action: Action) {
@@ -49,7 +52,6 @@ function questionsReducer(state: State, action: Action) {
                     text: action.value
                 }
             )
-            break;
         }
         case 'radio': {
             return (
@@ -57,7 +59,6 @@ function questionsReducer(state: State, action: Action) {
                     radio: action.value
                 }
             )
-            break;
         }
         case 'select': {
             return (
@@ -65,7 +66,16 @@ function questionsReducer(state: State, action: Action) {
                     select: action.value
                 }
             )
-            break;
+        }
+        case 'checkbox': {
+            const value = (action.value === 'true') ? true : false;
+            console.log(`context|checkbox: ${value}`);
+
+            return (
+                {...state,
+                    checkbox: value
+                }
+            )
         }
         default: {
             throw Error(`Unknown action: ${action.type}`);
