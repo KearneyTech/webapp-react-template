@@ -69,7 +69,6 @@ function questionsReducer(state: State, action: Action) {
         }
         case 'checkbox': {
             const value = (action.value === 'true') ? true : false;
-            console.log(`context|checkbox: ${value}`);
 
             return (
                 {...state,

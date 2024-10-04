@@ -29,8 +29,8 @@ export default function Select({handleSubmit}) {
                     <option value="first">First</option>
                     <option value="second">Second</option>
                 </select>
-                <button onClick={handleButton}>Next</button>
             </label>
+            <button onClick={handleButton}>Next</button>
         </>
     );
 }

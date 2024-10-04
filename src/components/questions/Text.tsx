@@ -26,8 +26,8 @@ export default function Text({handleSubmit}) {
             <label  className="flex flex-col text-left text-black">
                 What do you want to say?
                 <input type="text" value={textValue} onChange={handleChange} className="border border-black bg-transparent w-72" />
-                <button onClick={handleButton}>Next</button>
             </label>
+            <button onClick={handleButton}>Next</button>
         </>
     );
 }
