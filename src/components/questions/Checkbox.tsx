@@ -6,12 +6,9 @@ export default function Checkbox({handleSubmit}) {
     const questions = useQuestions();
     const dispatch = useQuestionsDispatch();
     const [checkboxValue, setCheckboxValue] = useState(questions?.checkbox);
-    console.log(`Checkbox: ${questions?.checkbox}`);
 
     function handleChange(e) {
-        console.log(e.target.checked, checkboxValue);
-        setTimeout(()=>{setCheckboxValue(e.target.checked)}, 100);
-        console.log(`sending ${checkboxValue}`);
+        setCheckboxValue(!checkboxValue);
     }
 
     function handleButton() {
@@ -19,7 +16,7 @@ export default function Checkbox({handleSubmit}) {
 
         dispatch({
             type: 'checkbox',
-            value: true//checkboxValue
+            value: checkboxValue?.toString()
         })
 
         handleSubmit('checkbox');
@@ -31,8 +28,8 @@ export default function Checkbox({handleSubmit}) {
             <label  className="flex flex-col text-left text-black">
                 In or out?
                 <input type="checkbox" defaultChecked={checkboxValue} onChange={handleChange} className="border border-black bg-transparent w-72" />
-                <button onClick={handleButton}>Next</button>
             </label>
+            <button onClick={handleButton}>Next</button>
         </>
     );
 }
