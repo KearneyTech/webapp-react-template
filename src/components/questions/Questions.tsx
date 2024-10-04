@@ -7,6 +7,8 @@ import Select from './Select.tsx';
 import Radio from './Radio.tsx';
 import Checkbox from './Checkbox.tsx';
 import Final from './Final.tsx';
+import { Button } from '@mui/material';
+import ButtonGroup from '@mui/material/ButtonGroup';
 
 function Questions() {
     const [selectedComponent, setSelectedComponent] = useState('info');
@@ -53,10 +55,12 @@ function Questions() {
             <h1>Questions</h1>
             <DynamicComponent component={components[selectedComponent]} handleSubmit={handleViewSubmit} />
             <div>
-                <button onClick={handleText}>Text</button>
-                <button onClick={handleSelect}>Select</button>
-                <button onClick={handleRadio}>Radio</button>
-                <button onClick={handleCheckbox}>Checkbox</button>
+                <ButtonGroup variant="outlined">
+                    <Button onClick={handleText}>Text</Button>
+                    <Button onClick={handleSelect}>Select</Button>
+                    <Button onClick={handleRadio}>Radio</Button>
+                    <Button onClick={handleCheckbox}>Checkbox</Button>
+                </ButtonGroup>
             </div>
         </QuestionsProvider>
     );

@@ -1,3 +1,4 @@
+import Button from '@mui/material/Button';
 import React from 'react';
 
 export default function Info({handleSubmit}) {
@@ -9,7 +10,7 @@ export default function Info({handleSubmit}) {
         <>
             <div>Info</div>
             <p>Make selections for the final output.</p>
-            <button onClick={handleButton}>Next</button>
+            <Button onClick={handleButton}  variant="outlined">Next</Button>
         </>
     );
 }
