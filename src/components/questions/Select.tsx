@@ -23,9 +23,9 @@ export default function Select({handleSubmit}) {
     return (
         <>
             <div>Select</div>
-            <label  className="flex flex-col text-left text-black">
+            <label  className="flex flex-col text-left text-white">
                 Choose an option
-                <select value={selectValue} onChange={handleChange} className="w-72 border border-black bg-transparent">
+                <select value={selectValue} onChange={handleChange} className="w-72 border border-white bg-transparent">
                     <option value="first">First</option>
                     <option value="second">Second</option>
                 </select>

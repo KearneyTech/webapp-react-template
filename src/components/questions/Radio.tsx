@@ -24,11 +24,11 @@ export default function Radio({handleSubmit}) {
     return (
         <>
             <div>Radio</div>
-            <label  className="flex flex-col text-left text-black">
+            <label  className="flex flex-col text-left text-white">
                 What do you want to say?
-                <input type="radio" name='radios' value='option1' onChange={handleChange} checked={radioValue === 'option1'} className="border border-black bg-transparent w-72" />
-                <input type="radio" name='radios' value='option2' onChange={handleChange} checked={radioValue === 'option2'} className="border border-black bg-transparent w-72" />
-                <input type="radio" name='radios' value='option3' onChange={handleChange} checked={radioValue === 'option3'} className="border border-black bg-transparent w-72" />
+                <input type="radio" name='radios' value='option1' onChange={handleChange} checked={radioValue === 'option1'} className="border border-white bg-transparent w-72" />
+                <input type="radio" name='radios' value='option2' onChange={handleChange} checked={radioValue === 'option2'} className="border border-white bg-transparent w-72" />
+                <input type="radio" name='radios' value='option3' onChange={handleChange} checked={radioValue === 'option3'} className="border border-white bg-transparent w-72" />
             </label>
             <button onClick={handleButton}>Next</button>
         </>
