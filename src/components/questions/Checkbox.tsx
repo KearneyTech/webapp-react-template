@@ -25,9 +25,9 @@ export default function Checkbox({handleSubmit}) {
     return (
         <>
             <div>Checkbox</div>
-            <label  className="flex flex-col text-left text-black">
+            <label  className="flex flex-col text-left text-white">
                 In or out?
-                <input type="checkbox" defaultChecked={checkboxValue} onChange={handleChange} className="border border-black bg-transparent w-72" />
+                <input type="checkbox" defaultChecked={checkboxValue} onChange={handleChange} className="border border-white bg-transparent w-72" />
             </label>
             <button onClick={handleButton}>Next</button>
         </>
