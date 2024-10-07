@@ -13,6 +13,7 @@ import { Box, CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material";
 import Container from '@mui/material/Container';
 import theme from "./theme.ts";
+import MaterialUI from "./components/MaterialUI.tsx";
 
 const router = createBrowserRouter([
     {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
           path: '/questions',
           element: <Questions />
+      },
+      {
+          path: '/mui',
+          element: <MaterialUI />
       }
   ]);
 
