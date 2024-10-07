@@ -12,6 +12,9 @@ export default function Home() {
                     <p>
                         This is a place for me to play with a ReactJS front end.
                     </p>
+                    <p>
+                        Take a look at a component below.
+                    </p>
                 </CardContent>
                 <CardActions>
                     <Button LinkComponent={Link} to='cube'>
@@ -19,6 +22,9 @@ export default function Home() {
                     </Button>
                     <Button LinkComponent={Link} to='questions'>
                         Questions
+                    </Button>
+                    <Button LinkComponent={Link} to='mui'>
+                        Material UI
                     </Button>
                 </CardActions>
             </Card>
