@@ -11,7 +11,7 @@ export default function MaterialUI() {
                     title="Card Component"
                     subheader="Just playing around"
                     avatar={
-                        <Avatar sx={{bgcolor: red[500]}}>CC</Avatar>
+                        <Avatar sx={{backgroundColor: 'secondary.main'}}>CC</Avatar>
                     }
                 />
                 <CardMedia
