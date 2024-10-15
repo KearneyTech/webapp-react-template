@@ -52,15 +52,17 @@ function Questions() {
 
     return (
         <QuestionsProvider>
-            <h1>Questions</h1>
-            <DynamicComponent component={components[selectedComponent]} handleSubmit={handleViewSubmit} />
-            <div>
-                <ButtonGroup variant="outlined">
-                    <Button onClick={handleText}>Text</Button>
-                    <Button onClick={handleSelect}>Select</Button>
-                    <Button onClick={handleRadio}>Radio</Button>
-                    <Button onClick={handleCheckbox}>Checkbox</Button>
-                </ButtonGroup>
+            <div className='flex flex-col p-3 max-w-md bg-gradient-to-r from-cyan-500 to-blue-500'>
+                <h1>Questions</h1>
+                <DynamicComponent component={components[selectedComponent]} handleSubmit={handleViewSubmit} />
+                <div>
+                    <ButtonGroup variant="outlined">
+                        <Button onClick={handleText}>Text</Button>
+                        <Button onClick={handleSelect}>Select</Button>
+                        <Button onClick={handleRadio}>Radio</Button>
+                        <Button onClick={handleCheckbox}>Checkbox</Button>
+                    </ButtonGroup>
+                </div>
             </div>
         </QuestionsProvider>
     );
