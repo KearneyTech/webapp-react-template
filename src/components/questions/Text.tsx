@@ -21,13 +21,12 @@ export default function Text({handleSubmit}) {
     }
 
     return (
-        <>
-            <div>Text</div>
-            <label  className="flex flex-col text-left text-white">
+        <div className="flex flex-col text-left text-black p-5">
+            <label className='w-9/12 mx-auto mb-2'>
                 What do you want to say?
-                <input type="text" value={textValue} onChange={handleChange} className="border border-white bg-transparent w-72" />
+                <input type="text" value={textValue} onChange={handleChange} className="border border-black bg-transparent w-9/12" />
             </label>
-            <button onClick={handleButton}>Next</button>
-        </>
+            <button className='w-16 rounded-md bg-black text-white px-2 py-3 mx-auto my-1' onClick={handleButton}>Next</button>
+        </div>
     );
 }

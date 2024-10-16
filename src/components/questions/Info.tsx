@@ -7,10 +7,9 @@ export default function Info({handleSubmit}) {
     }
 
     return (
-        <>
-            <div>Info</div>
+        <div className="flex flex-col text-left text-black p-5">
             <p>Make selections for the final output.</p>
-            <Button onClick={handleButton}  variant="outlined">Next</Button>
-        </>
+            <button className='w-16 rounded-md bg-black text-white px-2 py-3 mx-auto my-1' onClick={handleButton}>Begin</button>
+        </div>
     );
 }
