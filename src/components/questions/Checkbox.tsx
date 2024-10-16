@@ -23,13 +23,12 @@ export default function Checkbox({handleSubmit}) {
     }
 
     return (
-        <>
-            <div>Checkbox</div>
-            <label  className="flex flex-col text-left text-white">
+        <div className="flex flex-col text-left text-black p-5">
+            <label  className="flex text-left w-9/12">
                 In or out?
-                <input type="checkbox" defaultChecked={checkboxValue} onChange={handleChange} className="border border-white bg-transparent w-72" />
+                <input type="checkbox" defaultChecked={checkboxValue} onChange={handleChange} className="ml-2 border-4 border-black bg-transparent w-4" />
             </label>
-            <button onClick={handleButton}>Next</button>
-        </>
+            <button className='w-16 rounded-md bg-black text-white px-2 py-3 mx-auto my-1' onClick={handleButton}>Next</button>
+        </div>
     );
 }

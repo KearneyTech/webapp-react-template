@@ -52,16 +52,14 @@ function Questions() {
 
     return (
         <QuestionsProvider>
-            <div className='flex flex-col p-3 max-w-md bg-gradient-to-r from-cyan-500 to-blue-500'>
-                <h1>Questions</h1>
+            <div className='flex flex-col p-4 max-w-md bg-gradient-to-r from-[#c6edc9] to-[#0ec699] text-black rounded-xl text-center'>
+                <h1 className='text-3xl mb-4'>Questions</h1>
                 <DynamicComponent component={components[selectedComponent]} handleSubmit={handleViewSubmit} />
-                <div>
-                    <ButtonGroup variant="outlined">
-                        <Button onClick={handleText}>Text</Button>
-                        <Button onClick={handleSelect}>Select</Button>
-                        <Button onClick={handleRadio}>Radio</Button>
-                        <Button onClick={handleCheckbox}>Checkbox</Button>
-                    </ButtonGroup>
+                <div className='mt-4'>
+                    <button onClick={handleText} className='rounded-md bg-black text-white px-5 py-3 m-1'>Text</button>
+                    <button onClick={handleSelect} className='rounded-md bg-black text-white px-5 py-3 m-1'>Select</button>
+                    <button onClick={handleRadio} className='rounded-md bg-black text-white px-5 py-3 m-1'>Radio</button>
+                    <button onClick={handleCheckbox} className='rounded-md bg-black text-white px-5 py-3 m-1'>Checkbox</button>
                 </div>
             </div>
         </QuestionsProvider>
