@@ -10,11 +10,12 @@ function CubeApp() {
         'bg-[#ff0000]'
     ];
 
+
     const [tile1Color, setTile1Color] = useState(tileColors[randomNumber(4)]);
     const [tile2Color, setTile2Color] = useState(tileColors[randomNumber(4)]);
     const [tile3Color, setTile3Color] = useState(tileColors[randomNumber(4)]);
     const [tile4Color, setTile4Color] = useState(
-        tileColors[nextColor(tile3Color)]
+        nextColor(tile3Color)
     );
     const [boardStyle, setBoardStyle] = useState('');
 
@@ -31,11 +32,11 @@ function CubeApp() {
         evaluateCube();
     }, [tile4Color]);
 
-    function randomNumber(max) {
+    function randomNumber(max: number) {
         return Math.floor(Math.random() * max);
     }
 
-    function nextColor(color) {
+    function nextColor(color: string) {
         let colorIndex = tileColors.indexOf(color);
         colorIndex = colorIndex === tileColors.length - 1 ? 0 : colorIndex + 1;
         return tileColors[colorIndex];

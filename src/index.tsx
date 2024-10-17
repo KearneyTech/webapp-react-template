@@ -14,6 +14,7 @@ import { ThemeProvider } from '@mui/material';
 import Container from '@mui/material/Container';
 import theme from './theme.ts';
 import MaterialUI from './components/MaterialUI.tsx';
+import ChakraUI from './components/ChakraUI.tsx';
 
 const router = createBrowserRouter([
     {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
     {
         path: '/mui',
         element: <MaterialUI />
+    },
+    {
+        path: '/chakraui',
+        element: <ChakraUI />
     }
 ]);
 
@@ -85,7 +90,13 @@ function LinkMenu() {
                     href="/mui"
                     className="cursor-pointer text-[#f50057] hover:underline"
                 >
-                    MaterialUI
+                    Material UI
+                </a>
+                <a
+                    href="/chakraui"
+                    className="cursor-pointer text-[#f50057] hover:underline"
+                >
+                    Chakra UI
                 </a>
             </div>
         </div>

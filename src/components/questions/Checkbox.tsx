@@ -12,7 +12,7 @@ export default function Checkbox({handleSubmit}) {
     }
 
     function handleButton() {
-        if(!dispatch || checkboxValue === 'undefined'){return};
+        if(!dispatch){return};
 
         dispatch({
             type: 'checkbox',
