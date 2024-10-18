@@ -17,16 +17,16 @@ export default function Home() {
                     </p>
                 </CardContent>
                 <CardActions>
-                    <Button component={null} LinkComponent={Link} to='cube'>
+                    <Button component={Link} to='cube'>
                         Cube
                     </Button>
-                    <Button component={null} LinkComponent={Link} to='questions'>
+                    <Button component={Link} to='questions'>
                         Questions
                     </Button>
-                    <Button component={null} LinkComponent={Link} to='mui'>
+                    <Button component={Link} to='mui'>
                         Material UI
                     </Button>
-                    <Button component={null} LinkComponent={Link} to='chakraui'>
+                    <Button component={Link} to='chakraui'>
                         Chakra UI
                     </Button>
                 </CardActions>
