@@ -1,12 +1,41 @@
+import { Avatar, Card, CardContent, CardHeader, CardMedia, Divider, Typography } from '@mui/material';
+import { red } from '@mui/material/colors';
+import React from 'react';
+
 export default function Products() {
     return (
         <>
-            <h3>Products</h3>
-            
+            <Typography variant='h3'>Products</Typography>
+            <Card sx={{ maxWidth: 345 }}>
+                <CardHeader
+                    title="Essence Mascara Lash Princess"
+                    subheader="Essence"
+                    avatar={
+                        <Avatar sx={{backgroundColor: 'secondary.main'}}>CC</Avatar>
+                    }
+                />
+                <CardMedia
+                    component="img"
+                    height='90'
+                    image='https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png'
+                    alt='Image alt tag'
+                    />
+                <CardContent>
+                    <Typography variant='h4' sx={{color: 'text.accent'}}>$9.99</Typography>
+                    <Typography sx={{color: 'red'}}>-7.17%</Typography>
+                    <Typography mb={1}>
+                    The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula. 
+                    </Typography>
+                    <Divider variant='middle'/>
+                    <Typography mt={1}>1 month warranty</Typography>
+                    <Typography>Ships in 1 month</Typography>
+                    <Typography>Low Stock</Typography>
+                    <Typography>30 days return policy</Typography>
+                </CardContent>
+            </Card>
         </>
     );
 }
-
 const data = {
     products: [
         {
