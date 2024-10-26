@@ -1,37 +1,103 @@
-import { Avatar, Card, CardContent, CardHeader, CardMedia, Divider, Typography } from '@mui/material';
-import { red } from '@mui/material/colors';
+import {
+    Avatar,
+    Card,
+    CardActions,
+    CardContent,
+    CardHeader,
+    CardMedia,
+    Collapse,
+    Divider,
+    IconButton,
+    IconButtonProps,
+    styled,
+    Typography
+} from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import React from 'react';
 
+interface ExpandMoreProps extends IconButtonProps {
+    expand: boolean;
+}
+
+const ExpandMore = styled((props: ExpandMoreProps) => {
+    const { expand, ...other } = props;
+    return <IconButton {...other} />;
+})(({ theme }) => ({
+    marginLeft: 'auto',
+    transition: theme.transitions.create('transform', {
+        duration: theme.transitions.duration.shortest
+    }),
+    variants: [
+        {
+            props: ({ expand }) => !expand,
+            style: {
+                transform: 'rotate(0deg)'
+            }
+        },
+        {
+            props: ({ expand }) => !!expand,
+            style: {
+                transform: 'rotate(180deg)'
+            }
+        }
+    ]
+}));
+
 export default function Products() {
+    const [expanded, setExpanded] = React.useState(false);
+
+    function handleExpandClick() {
+        setExpanded(!expanded);
+    }
+
     return (
         <>
-            <Typography variant='h3'>Products</Typography>
+            <Typography variant="h3">Products</Typography>
             <Card sx={{ maxWidth: 345 }}>
                 <CardHeader
                     title="Essence Mascara Lash Princess"
                     subheader="Essence"
                     avatar={
-                        <Avatar sx={{backgroundColor: 'secondary.main'}}>CC</Avatar>
+                        <Avatar sx={{ backgroundColor: 'secondary.main' }}>
+                            CC
+                        </Avatar>
                     }
                 />
                 <CardMedia
                     component="img"
-                    height='90'
-                    image='https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png'
-                    alt='Image alt tag'
-                    />
+                    height="90"
+                    image="https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png"
+                    alt="Image alt tag"
+                />
                 <CardContent>
-                    <Typography variant='h4' sx={{color: 'text.accent'}}>$9.99</Typography>
-                    <Typography sx={{color: 'red'}}>-7.17%</Typography>
-                    <Typography mb={1}>
-                    The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula. 
+                    <Typography variant="h4" sx={{ color: 'text.accent' }}>
+                        $9.99
                     </Typography>
-                    <Divider variant='middle'/>
-                    <Typography mt={1}>1 month warranty</Typography>
-                    <Typography>Ships in 1 month</Typography>
-                    <Typography>Low Stock</Typography>
-                    <Typography>30 days return policy</Typography>
+                    <Typography sx={{ color: 'red' }}>-7.17%</Typography>
+                    <Typography mb={1}>
+                        The Essence Mascara Lash Princess is a popular mascara
+                        known for its volumizing and lengthening effects.
+                        Achieve dramatic lashes with this long-lasting and
+                        cruelty-free formula.
+                    </Typography>
                 </CardContent>
+                <CardActions>
+                    <ExpandMore
+                        expand={expanded}
+                        onClick={handleExpandClick}
+                        aria-label="show more"
+                    >
+                        <ExpandMoreIcon />
+                    </ExpandMore>
+                </CardActions>
+                <Collapse in={expanded} timeout="auto" unmountOnExit>
+                    <CardContent>
+                        <Typography mt={1}>1 month warranty</Typography>
+                        <Typography>Ships in 1 month</Typography>
+                        <Typography>Low Stock</Typography>
+                        <Typography>30 days return policy</Typography>
+                    </CardContent>
+                </Collapse>
             </Card>
         </>
     );
