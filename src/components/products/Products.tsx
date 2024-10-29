@@ -6,7 +6,6 @@ import {
     CardHeader,
     CardMedia,
     Collapse,
-    Divider,
     IconButton,
     IconButtonProps,
     styled,
