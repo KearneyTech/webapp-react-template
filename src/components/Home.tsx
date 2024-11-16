@@ -29,6 +29,9 @@ export default function Home() {
                     <Button component={Link} to='chakraui'>
                         Chakra UI
                     </Button>
+                    <Button component={Link} to='products'>
+                        Products
+                    </Button>
                 </CardActions>
             </Card>
         </>
