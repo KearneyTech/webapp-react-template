@@ -15,6 +15,7 @@ import Container from '@mui/material/Container';
 import theme from './theme.ts';
 import MaterialUI from './components/MaterialUI.tsx';
 import ChakraUI from './components/ChakraUI.tsx';
+import Products from './components/products/Products.tsx';
 
 const router = createBrowserRouter([
     {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
     {
         path: '/chakraui',
         element: <ChakraUI />
+    },
+    {
+        path: '/products',
+        element: <Products />
     }
 ]);
 
