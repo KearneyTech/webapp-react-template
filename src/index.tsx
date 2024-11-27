@@ -103,6 +103,12 @@ function LinkMenu() {
                 >
                     Chakra UI
                 </a>
+                <a
+                    href="/products"
+                    className="cursor-pointer text-[#f50057] hover:underline"
+                >
+                    Products
+                </a>
             </div>
         </div>
     );
